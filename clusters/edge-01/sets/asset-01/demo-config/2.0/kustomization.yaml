@@ -1,0 +1,5 @@
+resources:
+- ./../../../../../../apps/demo-config/1.0
+- namespace.yaml
+
+namespace: hello-config-app

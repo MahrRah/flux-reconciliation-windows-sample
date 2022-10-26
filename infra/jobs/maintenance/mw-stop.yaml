@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: stop
+  namespace: jobs
+spec:
+  schedule: "* * * * *"
+  suspend: true
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: sa-job-runner
+          containers:
+          - name: hello
+            image: bitnami/kubectl:latest
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - kubectl patch kustomizations.kustomize.toolkit.fluxcd.io  mw-poc -n flux-system --patch '{"spec":{"suspend":true}}' --type merge;
+          restartPolicy: Never

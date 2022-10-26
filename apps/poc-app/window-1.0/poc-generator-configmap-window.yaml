@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: poc-generator-configuration
+data:
+  appconfig.yaml: |
+    frequencySeconds: 3
+    medium: 'oil'

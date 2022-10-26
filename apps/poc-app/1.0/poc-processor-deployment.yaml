@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poc-processor
+  labels:
+    app: poc-processor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: poc-processor
+  template:
+    metadata:
+      labels:
+        app: poc-processor
+    spec:
+      containers:
+      - name: poc-processor
+        image: privaterepo.io/poc/poc-processor:0.1
+        imagePullPolicy: IfNotPresent
+        env:
+            - name: EVENTHUB_CONNECTION_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: poc-creds
+                  key: event-connection-string
+            - name: AZURE_STORAGE_CONNECTION_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: poc-creds
+                  key: storage-connection-string
+            - name: EVENTHUB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: poc-processor-configuration
+                  key: eventhub.name
+            - name: MQTT_TOPIC
+              valueFrom:
+                configMapKeyRef:
+                  name: poc-processor-configuration
+                  key: infraconfig.topic
+                  optional: true
+            - name: MQTT_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: poc-processor-configuration
+                  key: infraconfig.mqttUrl
+            - name: CONTAINER_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: poc-processor-configuration
+                  key: storage.containername
+        resources:
+          requests:
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

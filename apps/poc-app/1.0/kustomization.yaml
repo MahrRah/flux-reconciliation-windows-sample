@@ -1,0 +1,5 @@
+resources:
+- poc-generator-deployment.yaml
+- poc-generator-configmap.yaml
+- poc-processor-deployment.yaml
+- poc-processor-configmap.yaml
