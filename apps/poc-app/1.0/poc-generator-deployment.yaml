@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: poc-generator
-        image: privaterepo.io/poc/poc-generator:0.4
+        image: privaterepo.io/poc/poc-generator:0.2
         imagePullPolicy: IfNotPresent
         resources:
           requests:
