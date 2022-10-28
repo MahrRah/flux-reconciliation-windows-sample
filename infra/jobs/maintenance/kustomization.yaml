@@ -2,5 +2,6 @@ resources:
   - mw-start.yaml
   - mw-stop.yaml
   - cluster-role.yaml
+  - namespace.yaml
   - cluster-role-binding.yaml
   - serviceaccount.yaml
