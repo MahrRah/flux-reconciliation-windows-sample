@@ -27,7 +27,7 @@ spec:
         volumeMounts:
         - mountPath: /app/configuration
           name: config
-        - mountPath: /app/configuration-mw
+        - mountPath: /app/configuration
           name: config-mw
       volumes:
       - name: config
