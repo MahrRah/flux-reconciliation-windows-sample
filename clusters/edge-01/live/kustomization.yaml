@@ -1,5 +1,5 @@
 resources:
-- ./../../../infra/base
+- ./../sets/asset-01/poc-app/live-1.0
 - ./../../../infra/jobs
 
 patchesStrategicMerge:

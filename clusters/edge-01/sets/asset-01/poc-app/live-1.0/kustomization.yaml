@@ -1,0 +1,11 @@
+resources:
+- ./../../../../../../apps/poc-app/live-1.0
+- namespace.yaml
+
+namespace: poc-app-ns
+
+# configMapGenerator:
+# - name: poc-generator-configuration-live
+#   behavior: replace
+#   files:
+#   - appconfig-0.1.yaml

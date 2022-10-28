@@ -38,7 +38,7 @@ spec:
             path: appconfig.yaml
       - name: config-mw
         configMap:
-          name: poc-generator-configuration-mw
+          name: poc-generator-configuration-live
           items:
           - key: "infraconfig.yaml"
             path: infraconfig.yaml
