@@ -5,10 +5,7 @@ resources:
 namespace: poc-app-ns
 
 configMapGenerator:
-- name: poc-generator-configuration
-  behavior: replace
-  files:
-  - appconfig.yaml
+
 - name: poc-processor-configuration
   behavior: merge
   literals:
