@@ -18,5 +18,6 @@ spec:
             command:
             - /bin/sh
             - -c
-            - kubectl patch kustomizations.kustomize.toolkit.fluxcd.io gitops-layer-windowed -n gitops --patch '{"spec":{"suspend":true}}' --type merge;
+            - kubectl patch kustomizations.kustomize.toolkit.fluxcd.io gitops-infra-windowed -n gitops --patch '{"spec":{"suspend":true}}' --type merge;
+            - kubectl patch kustomizations.kustomize.toolkit.fluxcd.io gitops-sets-windowed -n gitops --patch '{"spec":{"suspend":true}}' --type merge;
           restartPolicy: Never
