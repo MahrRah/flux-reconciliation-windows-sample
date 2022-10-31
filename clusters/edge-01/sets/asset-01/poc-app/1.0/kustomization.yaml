@@ -10,5 +10,5 @@ configMapGenerator:
   literals:
   - eventhub.name="poctest"
   - storage.containername="pocmessages"
-  - test="foo"
+  - test="foo2"
 
