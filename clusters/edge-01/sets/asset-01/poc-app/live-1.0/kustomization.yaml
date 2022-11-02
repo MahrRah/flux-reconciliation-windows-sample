@@ -4,8 +4,8 @@ resources:
 
 namespace: poc-app-ns
 
-# configMapGenerator:
-# - name: poc-generator-configuration-live
-#   behavior: replace
-#   files:
-#   - appconfig-0.1.yaml
+configMapGenerator:
+- name: poc-generator-configuration-live
+  behavior: replace
+  files:
+  - appconfig-0.1.yaml
