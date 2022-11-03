@@ -6,3 +6,5 @@ data:
   infraconfig.yaml: |
     mqttUrl: mosquitto.mosquitto.svc.cluster.local
     topic: generator
+  module.yaml: |
+    foo: bar

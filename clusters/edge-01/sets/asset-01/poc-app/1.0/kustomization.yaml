@@ -3,12 +3,4 @@ resources:
 
 namespace: poc-app-ns
 
-configMapGenerator:
-
-- name: poc-processor-configuration
-  behavior: merge
-  literals:
-  - eventhub.name="poctest"
-  - storage.containername="pocmessages"
-  - test="foo2"
 
