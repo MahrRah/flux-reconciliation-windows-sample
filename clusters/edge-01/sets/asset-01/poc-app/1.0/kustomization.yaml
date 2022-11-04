@@ -1,4 +1,8 @@
 resources:
 - ./../../../../../../apps/poc-app/1.0
-
 namespace: poc-app-ns
+configMapGenerator:
+- name: poc-generator-configuration
+  behavior: merge
+  files:
+  - poc-generator-configuration/module.yaml
