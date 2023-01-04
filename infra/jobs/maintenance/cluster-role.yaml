@@ -3,7 +3,6 @@ kind: ClusterRole
 metadata:
   name: job-runner
 rules:
-  - apiGroups: ['*']
-    resources: ['*']
-    verbs: ['*']
-#   TODO create a more narrow scope
+  - apiGroups: ['kustomize.toolkit.fluxcd.io']
+    resources: ['kustomizations']
+    verbs: ['list', 'patch', 'watch', 'update', 'get']

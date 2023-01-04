@@ -1,5 +1,5 @@
 resources:
-- ./../../../../../../apps/poc-app/live-1.0
+- ./../../../../../apps/poc-app/1.0-live
 - namespace.yaml
 
 namespace: poc-app-ns

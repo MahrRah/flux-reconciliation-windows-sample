@@ -1,6 +1,6 @@
 resources:
-  - mw-start.yaml
-  - mw-stop.yaml
+  - start-maintenance-window-job.yaml
+  - stop-maintenance-window-job.yaml
   - cluster-role.yaml
   - namespace.yaml
   - cluster-role-binding.yaml

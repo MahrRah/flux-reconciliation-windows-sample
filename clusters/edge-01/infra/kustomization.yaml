@@ -1,2 +1,7 @@
 resources:
+- ./../../../infra/jobs
 - ./../../../infra/base
+
+patchesStrategicMerge:
+  - ./../infra/start-patch.yaml
+  - ./../infra/stop-patch.yaml
