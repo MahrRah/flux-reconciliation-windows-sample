@@ -1,4 +1,5 @@
 resources:
 - ./../../../../apps/nginx
+- ./namespace.yaml
 
 namePrefix: nginx
