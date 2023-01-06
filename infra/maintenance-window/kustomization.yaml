@@ -1,0 +1,9 @@
+resources:
+  - open-maintenance-window-job.yaml
+  - close-maintenance-window-job.yaml
+  - cluster-role.yaml
+  - cluster-role-binding.yaml
+  - serviceaccount.yaml
+  - namespace.yaml
+
+namespace: jobs
