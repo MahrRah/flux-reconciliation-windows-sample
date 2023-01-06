@@ -1,2 +1,4 @@
 resources:
 - ./../../../../apps/nginx
+
+namePrefix: nginx
