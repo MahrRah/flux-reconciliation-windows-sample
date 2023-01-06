@@ -28,7 +28,12 @@ flux create source git config-poc \
     --silent
 ```
 
-#### Create `kustomizatiion` resources
+Two samples:
+
+1. `edge-01`: Updates only possible to cluster during a maintenance window
+2. `edge-02`: Applications have configurations that needs to be updated live as well as during maintenance windows.
+
+#### Create `kustomization` resources
 
 ```sh
 flux create kustomization infrastructure-poc \

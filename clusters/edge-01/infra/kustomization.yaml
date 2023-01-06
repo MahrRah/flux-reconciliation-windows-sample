@@ -1,6 +1,5 @@
 resources:
-- ./../../../infra/jobs
-- ./../../../infra/base
+- ./../../../infra/maintenance-window
 
 patchesStrategicMerge:
   - ./../infra/start-patch.yaml
