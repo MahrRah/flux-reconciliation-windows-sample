@@ -17,5 +17,5 @@ git fork https://github.com/MahrRah/flux-maintanance-windows-sample.git
 
 For the next steps follow `README.md` for the sample you are interested in:
 
-1. [`Sample1`](Sample1/README.md): Updates only possible to cluster during a maintenance window
+1. [`Sample1`](Sample1/README.md): Updates only possible to cluster during a reconciliation window
 2. [`Sample2`](Sample2/README.md): Applications have configurations that need to be updated in real-time as well as during reconciliation windows.

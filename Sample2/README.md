@@ -39,18 +39,18 @@ flux create kustomization apps-rt \
 ```
 
 ```sh
-flux create kustomization apps-mw \
+flux create kustomization apps-rw \
     --depends-on=apps-rt \
-    --path="./Sample2/clusters/cluster-1/apps/apps-mw" \
+    --path="./Sample2/clusters/cluster-1/apps/apps-rw" \
     --source=source\
     --prune=true \
     --interval=1m
 ```
 
-## 3. Customize Maintenance windows times
+## 3. Customize reconciliation windows times
 
 
-> Note: In this sample changes to the maintenance window definition will also only be applied within the maintenance window itself.
+> Note: In this sample changes to the reconciliation window definition will also only be applied within the reconciliation window itself.
 
-To change the schedule for each cluster individually, the cron-string can be patched like the example `start-patch.yaml`/`stop-patch.yaml` under `/clusters/cluster-1/infra/maintenance-window`.
+To change the schedule for each cluster individually, the cron-string can be patched like the example `start-patch.yaml`/`stop-patch.yaml` under `/clusters/cluster-1/infra/reconciliation-window`.
 Edit the string in `spec.schedule` to reflect when you want to have your reconciliation window open/close.

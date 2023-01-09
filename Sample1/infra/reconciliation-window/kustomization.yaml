@@ -1,6 +1,6 @@
 resources:
-  - open-maintenance-window-job.yaml
-  - close-maintenance-window-job.yaml
+  - open-reconciliation-window-job.yaml
+  - close-reconciliation-window-job.yaml
   - cluster-role.yaml
   - cluster-role-binding.yaml
   - serviceaccount.yaml

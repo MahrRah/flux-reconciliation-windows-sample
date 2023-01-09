@@ -1,0 +1,6 @@
+resources:
+- ./../../../../infra/reconciliation-window
+
+patchesStrategicMerge:
+  - ./open-reconciliation-window-patch.yaml
+  - ./close-reconciliation-window-patch.yaml
