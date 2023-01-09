@@ -17,6 +17,6 @@ spec:
             imagePullPolicy: IfNotPresent
             command: ["/bin/sh","-c"]
             args: 
-            - flux resume kustomization infra -n flux-system && flux resume kustomization apps -n flux-system;
+            - flux resume kustomization infra -n flux-system && flux resume kustomization apps-rw -n flux-system;
           restartPolicy: Never
           

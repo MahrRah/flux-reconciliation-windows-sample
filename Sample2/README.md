@@ -1,6 +1,6 @@
 # `flux-maintanance-windows-sample`
 
-This sample is part of the post []() and ilustrated how one can structure the GitOps repositroy to manage real-time changes of some application resource, as well as having some application resources be managed by a reconciliation window. 
+This sample is part of the post []() and ilustrated how one can structure the GitOps repositroy to manage real-time changes of some application resource, as well as having some application resources be managed by a reconciliation window.
 
 ## Setup of Flux resources
 
@@ -38,6 +38,9 @@ flux create kustomization apps-rt \
     --interval=1m
 ```
 
+Note that the real-time kustromization will be reconciled before the one managed by the reconciliation window.
+The main reason for this is, if the order wourld be different (i.e. `apps-rt` depends on `apps-rw` ) whenever the `apps-rw` `Kustomize` controller is suspended the reconciliation of the `apps-rt` `Kustomize` controller would never be triggered.
+
 ```sh
 flux create kustomization apps-rw \
     --depends-on=apps-rt \
@@ -48,7 +51,6 @@ flux create kustomization apps-rw \
 ```
 
 ## 3. Customize reconciliation windows times
-
 
 > Note: In this sample changes to the reconciliation window definition will also only be applied within the reconciliation window itself.
 
