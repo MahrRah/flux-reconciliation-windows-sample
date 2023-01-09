@@ -27,7 +27,7 @@ data:
               'request_time:$request_time';
       access_log	/var/log/nginx/access.log main;
       server {
-          listen       80;
+          listen       127.0.0.1:8080;
           server_name  _;
           location / {
               root   html;
