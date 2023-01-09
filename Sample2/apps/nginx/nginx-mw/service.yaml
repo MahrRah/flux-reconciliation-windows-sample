@@ -5,8 +5,10 @@ metadata:
   namespace: nginx
 spec:
   type: LoadBalancer
+  externalIPs:
+    - "13.95.8.148"
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 8080 # https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/status-page/
+    targetPort: 8080
   selector:
     app: nginx

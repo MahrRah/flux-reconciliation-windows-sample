@@ -1,0 +1,6 @@
+resources:
+- ./../../../../infra/maintenance-window
+
+patchesStrategicMerge:
+  - ./start-patch.yaml
+  - ./stop-patch.yaml

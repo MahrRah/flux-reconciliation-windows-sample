@@ -30,4 +30,4 @@ spec:
             - key: nginx.conf
               path: nginx.conf
             - key: mime.types
-              path: mime.types # HACK
+              path: mime.types # HACK manual mount of mime.types https://gist.githubusercontent.com/0x9090/ee977ce79ff67ce0208a1b6d68a5a190/raw/2b8d0d5ad50114ebe4c6441f96a5b296ce3d219c/mime.types

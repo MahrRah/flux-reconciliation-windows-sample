@@ -1,5 +1,5 @@
 resources:
-- ./../../../../infra/maintenance-window/maintenance-window-rt
+- ./../../../../infra/maintenance-window
 
 patchesStrategicMerge:
   - ./start-patch.yaml
