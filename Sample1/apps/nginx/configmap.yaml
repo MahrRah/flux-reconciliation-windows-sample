@@ -18,10 +18,9 @@ data:
         server {
             listen       8080;
             server_name  localhost;
-      
             root /etc/nginx/ ;
             location / {
-                autoindex on ;
+                autoindex on;
             }
         }
         include servers/*;
