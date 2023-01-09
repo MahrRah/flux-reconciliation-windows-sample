@@ -2,22 +2,35 @@
 
 The sample for edge-02 shows how an edge device could be managed using live changes as well as changes during a maintenance window.
 
-## Create `kustomization` resources
+# Create `Source` controller
 
 ```sh
-flux create kustomization infrastructure-poc \
-  --path="./clusters/pump1/infra-live" \
-  --source=config-poc \
-  --prune=true \
-  --interval=1m
+flux create source git source \
+    --url="https://github.com/MahrRah/flux-maintanance-windows-sample" \
+	  --username=<username> \
+    --password=<PAT-token> \
+    --branch=master \
+    --interval=1m \
+    --git-implementation=libgit2 \
+    --silent
+```
+
+## Create `Kustomize` controller
+```sh
+flux create kustomization infra-rt \
+    --path="./Sample2/clusters/edge-02/infra/infra-rt"  \
+    --source=source\
+    --prune=true \
+    --interval=1m
 ```
 
 ```sh
-flux create kustomization infrastructure-poc \
-  --path="./clusters/pump1/infra-windowed" \
-  --source=config-poc \
-  --prune=true \
-  --interval=1m
+flux create kustomization apps-rt \
+    --depends-on=infra \
+    --path="./Sample2/clusters/edge-02/apps/apps-rt" \
+    --source=source\
+    --prune=true \
+    --interval=1m
 ```
 
 ```sh

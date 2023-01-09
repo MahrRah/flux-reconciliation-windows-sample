@@ -2,23 +2,38 @@
 
 The sample for edge-01 shows how an edge device is only managed during a maintenance window.
 
-## Create `kustomization` resources
+
+## Create `Source` controler
 
 ```sh
-flux create kustomization infrastructure-poc \
-  --path="./clusters/pump1/infra" \
-  --source=config-poc \
-  --prune=true \
-  --interval=1m
+flux create source git source \
+    --url="https://github.com/MahrRah/flux-maintanance-windows-sample" \
+	  --username=<username> \
+    --password=<PAT-token> \
+    --branch=master \
+    --interval=1m \
+    --git-implementation=libgit2 \
+    --silent
+```
+## Create `Kustomize` controler
+
+
+
+```sh
+flux create kustomization infra \
+    --path="./Sample1/clusters/edge-01/infra/" \
+    --source=source\
+    --prune=true \
+    --interval=1m
 ```
 
 ```sh
-flux create kustomization apps-poc \
-  --depends-on=infrastructure-poc \
-  --path="./clusters/apps/" \
-  --source=config-poc \
-  --prune=true \
-  --interval=1m
+flux create kustomization apps \
+    --depends-on=infra \
+    --path="./Sample1/clusters/edge-01/apps/" \
+    --source=source\
+    --prune=true \
+    --interval=1m
 ```
 
 ## Use Maintenance windows

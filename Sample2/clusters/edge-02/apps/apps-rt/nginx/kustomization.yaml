@@ -1,0 +1,3 @@
+resources:
+- ./../../../../../apps/nginx/nginx-rt
+- ./namespace.yaml
