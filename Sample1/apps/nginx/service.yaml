@@ -5,6 +5,8 @@ metadata:
   namespace: nginx
 spec:
   type: LoadBalancer
+  externalIPs:
+    - "13.95.8.148"
   ports:
   - port: 80
     targetPort: 80
