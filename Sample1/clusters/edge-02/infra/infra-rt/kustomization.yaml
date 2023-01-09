@@ -1,6 +1,0 @@
-resources:
-- ./../../../infra/jobs
-
-patchesStrategicMerge:
-  - ./start-patch.yaml
-  - ./stop-patch.yaml

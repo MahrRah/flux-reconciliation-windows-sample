@@ -1,3 +1,0 @@
-resources:
-- hello-config-deployment.yaml
-- hello-config-service.yaml
