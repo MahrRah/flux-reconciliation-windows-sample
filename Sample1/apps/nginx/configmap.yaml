@@ -6,20 +6,33 @@ metadata:
   namespace: nginx
 data:
   nginx.conf: |
-    user nginx;
-    worker_processes  3;
-    error_log  /var/log/nginx/error.log;
+    worker_processes  1;
     events {
-      worker_connections  10240;
+        worker_connections  1024;
     }
     http {
-      access_log	/var/log/nginx/access.log main;
-      server {
-          listen       127.0.0.1:8080;
-          server_name  _;
-          location / {
-              root   html;
-              index  index.html index.htm;
-          }
-      }
+        include       mime.types;
+        default_type  application/octet-stream;
+        sendfile        on;
+        keepalive_timeout  65;
+        server {
+            listen       8080;
+            server_name  localhost;
+            location / {
+                root   html;
+                index  index2.html index2.htm;
+            }
+            # redirect server error pages to the static page /50x.html
+            error_page   500 502 503 504  /50x.html;
+            location = /50x.html {
+                root   html;
+            }
+            # status endpoint
+            location /nginx_status {
+                stub_status;
+                allow 127.0.0.1;    #only allow requests from localhost
+                deny all;       #deny all other hosts   
+            }
+        }
+        include servers/*;
     }
