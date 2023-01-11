@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: close-reconciliation-window
+  namespace: jobs
+spec:
+  schedule: "* * * * *"
+  suspend: true
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: sa-job-runner
+          containers:
+          - name: hello
+            image: ghcr.io/fluxcd/flux-cli:v0.36.0
+            imagePullPolicy: IfNotPresent
+            command: ["/bin/sh","-c"]
+            args: 
+            - flux suspend kustomization infra -n flux-system && flux suspend kustomization apps-rw -n flux-system; 
+          restartPolicy: Never
