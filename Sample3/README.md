@@ -18,8 +18,8 @@ flux create source git source \
 ## 2. Create `Kustomize` controler
 
 ```sh
-flux create kustomization infra \
-    --path="./Sample1/clusters/edge-01/infra/" \
+flux create kustomization bootstrap \
+    --path="./Sample3/flux/" \
     --source=source\
     --prune=true \
     --interval=1m
