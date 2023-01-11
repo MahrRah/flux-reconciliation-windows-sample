@@ -11,5 +11,6 @@ spec:
     namespace: flux-system
   path: ./Sample3/clusters/cluster-1/infra/
   prune: true
+  suspend: false
   wait: true
   timeout: 10m

@@ -12,4 +12,5 @@ spec:
   path: ./Sample3/clusters/cluster-1/apps/
   prune: true
   wait: true
+  suspend: false
   timeout: 10m
