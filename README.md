@@ -1,4 +1,4 @@
-# `flux-maintanance-windows-sample`
+# `flux-reconciliation-windows-sample`
 
 This repository contains samples to illustrate how to enable reconciliation windows for a K8s cluster managed by [Flux](https://fluxcd.io/).
 
@@ -12,7 +12,7 @@ This repository contains samples to illustrate how to enable reconciliation wind
 Fork repository
 
 ```sh
-git fork https://github.com/MahrRah/flux-maintanance-windows-sample.git
+git fork https://github.com/MahrRah/flux-reconciliation-windows-sample.git
 ```
 
 For the next steps follow `README.md` for the sample you are interested in:
