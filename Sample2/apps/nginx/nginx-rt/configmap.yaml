@@ -22,10 +22,6 @@ data:
             location / {
                 autoindex on;
             }
-            location /nginx_status {
-                stub_status;
-                allow all;	#only allow requests from localhost
-            }
         }
         include servers/*;
     }
