@@ -1,25 +1,25 @@
-# `flux-maintanance-windows-sample`
+# Sample 1: GitOps repository that enables reconciliation windows
 
-The sample for edge-01 shows how an edge device is only managed during a reconciliation window.
+This sample is part of the post []() and illustrates how one can leverage Flux and K8s CronJobs to manage reconciliations to happen only in a designated time window called "reconciliations window".
 
-## 1. Create `Source` controler
+## 1. Create `Source` resource
 
 ```sh
 flux create source git source \
-    --url="https://github.com/<github-handle>/flux-maintanance-windows-sample" \
+    --url="https://github.com/<github-handle>/flux-reconciliation-windows-sample" \
 	--username=<username> \
     --password=<PAT-token> \
-    --branch=master \
+    --branch=main \
     --interval=1m \
     --git-implementation=libgit2 \
     --silent
 ```
 
-## 2. Create `Kustomize` controler
+## 2. Create `Kustomization` resource
 
 ```sh
 flux create kustomization infra \
-    --path="./Sample1/clusters/edge-01/infra/" \
+    --path="./Sample1/clusters/cluster-1/infra/" \
     --source=source\
     --prune=true \
     --interval=1m
@@ -28,7 +28,7 @@ flux create kustomization infra \
 ```sh
 flux create kustomization apps \
     --depends-on=infra \
-    --path="./Sample1/clusters/edge-01/apps/" \
+    --path="./Sample1/clusters/cluster-1/apps/" \
     --source=source\
     --prune=true \
     --interval=1m

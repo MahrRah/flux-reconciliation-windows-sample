@@ -1,23 +1,23 @@
-# `flux-maintanance-windows-sample`
+# Sample 2: GitOps repository to support both real-time and reconciliation window changes
 
-This sample is part of the post []() and ilustrated how one can structure the GitOps repositroy to manage real-time changes of some application resource, as well as having some application resources be managed by a reconciliation window.
+This sample is part of the post []() and illustrates how one can structure the GitOps repository to manage real-time changes of some application resources, as well as having some application resources be managed by a reconciliation window.
 
 ## Setup of Flux resources
 
-### 1. Create `Source` controller
+### 1. Create `Source` resource
 
 ```sh
 flux create source git source \
-    --url="https://github.com/<github-handle>//flux-maintanance-windows-sample" \
+    --url="https://github.com/<github-handle>//flux-reconciliation-windows-sample" \
 	--username=<username> \
     --password=<PAT-token> \
-    --branch=master \
+    --branch=main \
     --interval=1m \
     --git-implementation=libgit2 \
     --silent
 ```
 
-### 2. Create `Kustomize` controller for infra
+### 2. Create `Kustomization` resource for infra
 
 ```sh
 flux create kustomization infra \
@@ -27,7 +27,7 @@ flux create kustomization infra \
     --interval=1m
 ```
 
-### 3. Create `Kustomize` controller for apps
+### 3. Create `Kustomize` resource for apps
 
 ```sh
 flux create kustomization apps-rt \
@@ -39,7 +39,7 @@ flux create kustomization apps-rt \
 ```
 
 Note that the real-time kustromization will be reconciled before the one managed by the reconciliation window.
-The main reason for this is, if the order wourld be different (i.e. `apps-rt` depends on `apps-rw` ) whenever the `apps-rw` `Kustomize` controller is suspended the reconciliation of the `apps-rt` `Kustomize` controller would never be triggered.
+The main reason for this is if the order wourld be different (i.e. `apps-rt` depends on `apps-rw` ) whenever the `apps-rw` `Kustomize` controller is suspended the reconciliation of the `apps-rt` `Kustomize` controller would never be triggered.
 
 ```sh
 flux create kustomization apps-rw \
