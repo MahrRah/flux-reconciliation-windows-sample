@@ -1,6 +1,6 @@
 # Sample 2: GitOps repository to support both real-time and reconciliation window changes
 
-This sample is part of the post []() and illustrates how one can structure the GitOps repository to manage real-time changes of some application resources, as well as having some application resources be managed by a reconciliation window.
+This sample is part of the blog post ["Refactoring GitOps repository to support both real-time and reconciliation window changes"](https://dev.to/mahrrah/refactoring-gitops-repository-to-support-both-real-time-and-reconciliation-window-changes-2cc) and illustrates how one can structure the GitOps repository to manage real-time changes of some application resources, as well as having some application resources be managed by a reconciliation window.
 
 ## Setup of Flux resources
 
