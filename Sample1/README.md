@@ -1,6 +1,6 @@
 # Sample 1: GitOps repository that enables reconciliation windows
 
-This sample is part of the post []() and illustrates how one can leverage Flux and K8s CronJobs to manage reconciliations to happen only in a designated time window called "reconciliations window".
+This sample is part of the blog post ["How to enable reconciliation windows using Flux and K8s native components"](https://dev.to/mahrrah/how-to-enable-reconciliation-windows-using-flux-and-k8s-native-components-2d4i) and illustrates how one can leverage Flux and K8s CronJobs to manage reconciliations to happen only in a designated time window called "reconciliations window".
 
 ## 1. Create `Source` resource
 
