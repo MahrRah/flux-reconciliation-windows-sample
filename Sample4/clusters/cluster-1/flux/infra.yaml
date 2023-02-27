@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: gitops-demo
-    namespace: flux-system
+    namespace: flux
   path: ./Sample4/clusters/cluster-1/infra/
   prune: true
   suspend: false
