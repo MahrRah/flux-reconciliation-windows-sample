@@ -1,0 +1,8 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: close-reconciliation-window
+  namespace: jobs
+spec:
+  schedule: "5,15,25,35,45,55 * * * *"
+  suspend: false

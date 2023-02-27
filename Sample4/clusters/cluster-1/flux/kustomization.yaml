@@ -1,0 +1,8 @@
+resources:
+  - ./apps.yaml
+  - ./infra.yaml
+# patches:
+#   - target:
+#       kind: Kustomization
+#       name: apps
+#     path: patch.json
