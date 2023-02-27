@@ -9,7 +9,7 @@ spec:
     kind: GitRepository
     name: source
     namespace: flux-system
-  path: ./Sample3/clusters/cluster-1/apps/
+  path: ./Sample4/clusters/cluster-1/apps/
   prune: true
   wait: true
   suspend: false
