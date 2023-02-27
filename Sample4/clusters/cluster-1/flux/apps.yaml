@@ -7,7 +7,7 @@ spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
-    name: source
+    name: gitops-demo
     namespace: flux-system
   path: ./Sample4/clusters/cluster-1/apps/
   prune: true
