@@ -7,8 +7,8 @@ spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
-    name: gitops-demo
-    namespace: flux
+    name: source
+    namespace: flux-system
   path: ./Sample4/clusters/cluster-1/infra/
   prune: true
   suspend: false
