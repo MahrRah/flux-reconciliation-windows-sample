@@ -3,6 +3,6 @@ kind: ClusterRole
 metadata:
   name: flux-permissions
 rules:
-- apiGroups: ["", "extensions", "apps"]
-  resources: ["deployments", "replicasets", "pods"]
-  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"] # You can also use ["*"]
+- apiGroups: ["*"]
+  resources:  ["*"]
+  verbs:  ["*"] # You can also use ["*"]
