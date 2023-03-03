@@ -20,3 +20,4 @@ For the next steps follow `README.md` for the sample you are interested in:
 1. [`Sample1`](Sample1/README.md): GitOps repository that enables reconciliation windows
 2. [`Sample2`](Sample2/README.md): GitOps repository to support both real-time and reconciliation window changes
 3. [`Sample3`](Sample3/README.md): GitOps repository with a "bootstrap" `Kustomization` approach
+4. [`Sample4`](Sample4/README.md): GitOps repository with a "bootstrap" `Kustomization` approach, notification controler and variable substitution.
