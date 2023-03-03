@@ -1,8 +1,0 @@
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: open-reconciliation-window
-  namespace: jobs
-spec:
-  schedule: "0,10,20,30,40,50 * * * *"
-  suspend: false

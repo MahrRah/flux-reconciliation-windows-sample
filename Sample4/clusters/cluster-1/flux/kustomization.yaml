@@ -1,3 +1,2 @@
 resources:
   - ./apps.yaml
-  - ./infra.yaml
