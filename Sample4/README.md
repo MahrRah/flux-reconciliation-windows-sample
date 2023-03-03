@@ -2,7 +2,19 @@
 
 The sample contains a cluster that can be setup using a "bootstrap" `Kustomization` resource and uses [Flux variable substitutions](https://fluxcd.io/flux/components/kustomize/kustomization/#variable-substitution). 
 
-## 1. Create `Source` resource
+
+## 1. Add External Secrets Provider  
+
+```sh
+helm repo add external-secrets https://charts.external-secrets.io
+
+helm install external-secrets \
+   external-secrets/external-secrets \
+    -n external-secrets \
+    --create-namespace \
+```
+
+## 2. Create `Source` resource
 
 ```sh
 flux create source git source \
@@ -21,7 +33,7 @@ flux create source git source \
 kubectl create secret generic github-token --from-literal=token=<PAT-token> --from-literal=address=<GIT-URL> 
 ```
 
-## 2. Create bootstrap `Kustomization` resource
+## 3. Create bootstrap `Kustomization` resource
 
 ```sh
 flux create kustomization bootstrap \

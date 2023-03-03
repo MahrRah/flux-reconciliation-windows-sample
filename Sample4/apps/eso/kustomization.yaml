@@ -1,0 +1,30 @@
+resources:
+- secretestore.yaml
+  # - clustersecretstore.yaml
+  # - clusterexternalsecret.yaml
+  # - ../../../.defaults/configmap-azure-kv.yaml
+
+# This namespace is created when ESO is installed on the cluster in the device onboarding script
+namespace: external-secrets
+
+# replacements:
+#   - source:
+#       kind: ConfigMap
+#       name: azure-kv
+#       fieldPath: data.key_vault
+#     targets:
+#       - select:
+#           kind: ClusterSecretStore
+#           name: cluster-azkv-secret-store
+#         fieldpaths:
+#           - spec.provider.azurekv.vaultUrl
+#   - source:
+#       kind: ConfigMap
+#       name: azure-kv
+#       fieldPath: data.tenant_id
+#     targets:
+#       - select:
+#           kind: ClusterSecretStore
+#           name: cluster-azkv-secret-store
+#         fieldpaths:
+#           - spec.provider.azurekv.tenantId
