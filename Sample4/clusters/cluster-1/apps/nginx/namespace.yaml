@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: nginx
   labels: 
-    acr: ${acr}
+    environment: ${environment}
